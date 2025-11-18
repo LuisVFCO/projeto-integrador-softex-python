@@ -1,5 +1,7 @@
 from django.shortcuts import render
 from django.http import HttpResponse
+from .models import Noticia
+
 
 # RASCUNHO DO BACK-END
 
@@ -39,4 +41,15 @@ def classificar(titulo, conteudo):
     pass
 
 def ver_buscador_noticias(request):
-    return HttpResponse('Primeiro teste: OK')
+    if request.method == "GET":
+        nome = 'Luis'
+        return render(request, 'ver_buscador.html', {'nome': 'nome'})
+    elif request.method == "POST":
+        titulo = request.POST.get('titulo')
+        descricao = request.POST.get('descricao')
+        
+        noticia = Noticia(titulo=titulo, descricao=descricao)
+
+        noticia.save()
+        
+        return HttpResponse('dados cadastrados')
