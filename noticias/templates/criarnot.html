@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Criar Notícia</title>
+</head>
+<body>
+
+    <h1>Criar Notícia</h1>
+
+    <form method="POST">
+        {% csrf_token %}
+
+        <label>Título:</label><br>
+        <input type="text" name="titulo"><br><br>
+
+        <label>Subtítulo:</label><br>
+        <input type="text" name="subtitulo"><br><br>
+
+        <label>Conteúdo:</label><br>
+        <textarea name="conteudo" rows="6" cols="50"></textarea><br><br>
+
+        <label>Autor:</label><br>
+        <input type="text" name="autor"><br><br>
+
+        <label>URL da Notícia:</label><br>
+        <input type="url" name="url_noticia"><br><br>
+
+        <label>Data da Notícia:</label><br>
+        <input type="date" name="data_noticia"><br><br>
+
+        <label>Fonte:</label><br>
+        <input type="text" name="fonte"><br><br>
+
+        <label>Categoria:</label><br>
+        <input type="text" name="categoria"><br><br>
+
+        <button type="submit">Salvar Notícia</button>
+    </form>
+
+</body>
+</html>

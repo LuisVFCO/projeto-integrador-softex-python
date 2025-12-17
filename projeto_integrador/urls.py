@@ -16,8 +16,10 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
+from noticias.views import criar_noticias, buscar_noticias
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('buscador_noticias/', include('buscador_noticias.urls'))
+    path('', buscar_noticias, name='buscar_noticias'), 
+    path('criar/', criar_noticias, name='criar_noticias'),
 ]
